@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-html/svelte",
+    "stylelint-config-html/html"
+  ],
+  "plugins": ["stylelint-gamut"],
+  "rules": {
+    "color-named": "never",
+    "declaration-no-important": true,
+    "gamut/color-no-out-gamut-range": true
+  }
+}
