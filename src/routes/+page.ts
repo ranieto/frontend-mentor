@@ -5,6 +5,13 @@ import type { PageLoad } from "./$types";
 export const load = (() => {
   const routes: Challenge[] = [
     {
+      href: "/ping-single-column-coming-soon",
+      name: "Ping Single Column Coming Soon",
+      difficulty: "Newbie",
+      url: "https://www.frontendmentor.io/challenges/ping-single-column-coming-soon-page-5cadd051fec04111f7b848da",
+      dateCompleted: "2023-11-14",
+    },
+    {
       href: "/social-proof",
       name: "Social Proof",
       difficulty: "Newbie",
