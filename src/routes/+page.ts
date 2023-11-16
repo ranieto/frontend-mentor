@@ -4,6 +4,20 @@ import type { PageLoad } from "./$types";
 
 export const load = (() => {
   const routes: Challenge[] = [
+    // {
+    //   href: "base-apparel-coming-soon",
+    //   name: "Base Apparel Coming Soon",
+    //   difficulty: "Newbie",
+    //   url: "https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0",
+    //   dateCompleted: "2023-11-",
+    // },
+    {
+      href: "interactive-rating",
+      name: "Interactive Rating",
+      difficulty: "Newbie",
+      url: "https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI",
+      dateCompleted: "2023-11-16",
+    },
     {
       href: "/ping-single-column-coming-soon",
       name: "Ping Single Column Coming Soon",
