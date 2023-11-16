@@ -172,4 +172,10 @@
       color: var(--accent);
     }
   }
+
+  .error {
+    text-align: center;
+    color: var(--accent);
+    font-style: italic;
+  }
 </style>
