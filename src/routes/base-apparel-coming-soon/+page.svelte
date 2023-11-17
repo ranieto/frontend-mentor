@@ -63,10 +63,10 @@
 			var(--sides) [picture-start] 1fr [picture-end];
 
 		/* display: grid;
-    grid-template-columns:
-      [full-width-start] var(--sides)
-      [content-start] 1fr [content-end]
-      var(--sides) [full-width-end]; */
+		grid-template-columns:
+			[full-width-start] var(--sides)
+			[content-start] 1fr [content-end]
+			var(--sides) [full-width-end]; */
 
 		/* text-align: center; */
 
@@ -91,8 +91,8 @@
 			object-fit: cover;
 
 			/* width: 100%;
-      max-height: 30ch;
-      object-fit: cover; */
+			max-height: 30ch;
+			object-fit: cover; */
 		}
 	}
 

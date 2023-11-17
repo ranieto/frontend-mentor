@@ -1,41 +1,41 @@
 @font-face {
-  font-family: OpenSans;
-  font-weight: 300;
-  src:
-    local("OpenSans Light"),
-    url("/src/assets/fonts/OpenSans-Light.woff") format("woff");
+	font-family: OpenSans;
+	font-weight: 300;
+	src:
+		local("OpenSans Light"),
+		url("/src/assets/fonts/OpenSans-Light.woff") format("woff");
 }
 
 @font-face {
-  font-family: OpenSans;
-  font-weight: 400;
-  src:
-    local("OpenSans Regular"),
-    url("/src/assets/fonts/OpenSans-Regular.woff") format("woff");
+	font-family: OpenSans;
+	font-weight: 400;
+	src:
+		local("OpenSans Regular"),
+		url("/src/assets/fonts/OpenSans-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: OpenSans;
-  font-weight: 400;
-  font-style: italic;
-  src:
-    local("OpenSans Italic"),
-    url("/src/assets/fonts/OpenSans-Italic.woff") format("woff");
+	font-family: OpenSans;
+	font-weight: 400;
+	font-style: italic;
+	src:
+		local("OpenSans Italic"),
+		url("/src/assets/fonts/OpenSans-Italic.woff") format("woff");
 }
 
 @font-face {
-  font-family: OpenSans;
-  font-weight: 700;
-  src:
-    local("OpenSans Bold"),
-    url("/src/assets/fonts/OpenSans-Bold.woff") format("woff");
+	font-family: OpenSans;
+	font-weight: 700;
+	src:
+		local("OpenSans Bold"),
+		url("/src/assets/fonts/OpenSans-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: OpenSans;
-  font-weight: 700;
-  font-style: italic;
-  src:
-    local("OpenSans Bold Italic"),
-    url("/src/assets/fonts/OpenSans-BoldItalic.woff") format("woff");
+	font-family: OpenSans;
+	font-weight: 700;
+	font-style: italic;
+	src:
+		local("OpenSans Bold Italic"),
+		url("/src/assets/fonts/OpenSans-BoldItalic.woff") format("woff");
 }

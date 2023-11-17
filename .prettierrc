@@ -1,6 +1,7 @@
 {
-  "htmlWhitespaceSensitivity": "ignore",
-  "plugins": ["prettier-plugin-svelte"],
-  "pluginSearchDirs": ["."],
-  "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+	"htmlWhitespaceSensitivity": "ignore",
+	"plugins": ["prettier-plugin-svelte"],
+	"useTabs": true,
+	"pluginSearchDirs": ["."],
+	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }

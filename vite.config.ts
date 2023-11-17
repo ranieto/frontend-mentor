@@ -3,16 +3,16 @@ import Icons from "unplugin-icons/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [
-    sveltekit(),
-    Icons({
-      compiler: "svelte",
-    }),
-  ],
-  css: {
-    transformer: "lightningcss",
-  },
-  build: {
-    cssMinify: "lightningcss",
-  },
+	plugins: [
+		sveltekit(),
+		Icons({
+			compiler: "svelte",
+		}),
+	],
+	css: {
+		transformer: "lightningcss",
+	},
+	build: {
+		cssMinify: "lightningcss",
+	},
 });
