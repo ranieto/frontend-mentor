@@ -12,6 +12,13 @@ export const load = (() => {
     //   dateCompleted: "2023-11-",
     // },
     {
+      href: "intro-component-with-signup-form",
+      name: "Intro Component with Sign-up Form",
+      difficulty: "Newbie",
+      url: "https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1",
+      dateCompleted: "2023-11-16",
+    },
+    {
       href: "interactive-rating",
       name: "Interactive Rating",
       difficulty: "Newbie",

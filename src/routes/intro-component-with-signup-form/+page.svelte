@@ -1,4 +1,5 @@
 <script lang="ts">
+  import MaterialSymbolsErrorCircleRounded from "~icons/material-symbols/error-circle-rounded";
   import type { ActionData } from "./$types";
 
   export let form: ActionData;
@@ -32,42 +33,64 @@
       </p>
 
       <form action="?/register" method="post">
-        <input
-          type="text"
-          name="first-name"
-          placeholder="First Name"
-          class:error={isFirstNameError}
-          value={form?.firstName || ""}
-        />
+        <div class="input-wrapper" class:error={isFirstNameError}>
+          <input
+            type="text"
+            name="first-name"
+            placeholder="First Name"
+            value={form?.firstName || ""}
+          />
+
+          <div class="error-icon">
+            {#if isFirstNameError}
+              <MaterialSymbolsErrorCircleRounded />
+            {/if}
+          </div>
+        </div>
         {#if form?.firstNameError}
           <p class="error-message">{form.firstNameError}</p>
         {/if}
-        <input
-          type="text"
-          name="last-name"
-          placeholder="Last Name"
-          class:error={isLastNameError}
-          value={form?.lastName || ""}
-        />
+        <div class="input-wrapper" class:error={isLastNameError}>
+          <input
+            type="text"
+            name="last-name"
+            placeholder="Last Name"
+            value={form?.lastName || ""}
+          />
+          <div class="error-icon">
+            {#if isLastNameError}
+              <MaterialSymbolsErrorCircleRounded />
+            {/if}
+          </div>
+        </div>
         {#if form?.lastNameError}
           <p class="error-message">{form.lastNameError}</p>
         {/if}
-        <input
-          type="text"
-          name="email"
-          placeholder="Email Address"
-          class:error={isEmailError}
-          value={form?.email || ""}
-        />
+        <div class="input-wrapper" class:error={isEmailError}>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email Address"
+            value={form?.email || ""}
+          />
+
+          <div class="error-icon">
+            {#if isEmailError}
+              <MaterialSymbolsErrorCircleRounded />
+            {/if}
+          </div>
+        </div>
         {#if form?.emailError}
           <p class="error-message">{form.emailError}</p>
         {/if}
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          class:error={isPasswordError}
-        />
+        <div class="input-wrapper" class:error={isPasswordError}>
+          <input type="password" name="password" placeholder="Password" />
+          <div class="error-icon">
+            {#if isPasswordError}
+              <MaterialSymbolsErrorCircleRounded />
+            {/if}
+          </div>
+        </div>
         {#if form?.passwordError}
           <p class="error-message">{form.passwordError}</p>
         {/if}
@@ -136,15 +159,32 @@
   }
 
   input {
+    border: none;
+    font-weight: 600;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .input-wrapper {
     padding: 1rem;
     border: 1px solid var(--grayish-blue);
     border-radius: var(--inner-border-radius);
-    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    &:active,
-    &:focus {
+    &:focus-within {
       outline: solid var(--dark-blue);
     }
+  }
+
+  .error-icon {
+    font-size: 1.4rem;
+    color: var(--red);
+    min-width: 2ch;
   }
 
   button {
