@@ -3,7 +3,7 @@
 	import hero from "./illustration-hero.svg";
 </script>
 
-<div class="card">
+<main>
 	<img src={hero} alt="A drawing of a girl listening to music" />
 	<div class="card-content">
 		<h1>Order Summary</h1>
@@ -22,10 +22,10 @@
 		<button class="btn-pay">Proceed to Payment</button>
 		<button class="btn-cancel">Cancel Order</button>
 	</div>
-</div>
+</main>
 
 <style>
-	.card {
+	main {
 		--border-radius: 10px;
 
 		background: var(--white);

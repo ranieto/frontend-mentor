@@ -2,16 +2,18 @@
 	import qrCode from "./image-qr-code.png";
 </script>
 
-<a href="/">
-	<div class="card">
-		<img src={qrCode} alt="A QR Code for Frontend Mentor" />
-		<h1>Improve your front-end skills by building projects</h1>
-		<p>
-			Scan the QR code to visit Frontend Mentor and take your coding skills to
-			the next level
-		</p>
-	</div>
-</a>
+<main>
+	<a href="/">
+		<div class="card">
+			<img src={qrCode} alt="A QR Code for Frontend Mentor" />
+			<h1>Improve your front-end skills by building projects</h1>
+			<p>
+				Scan the QR code to visit Frontend Mentor and take your coding skills to
+				the next level
+			</p>
+		</div>
+	</a>
+</main>
 
 <style>
 	a {
