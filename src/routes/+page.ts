@@ -4,13 +4,13 @@ import type { PageLoad } from "./$types";
 
 export const load = (() => {
 	const routes: Challenge[] = [
-		// {
-		//   href: "base-apparel-coming-soon",
-		//   name: "Base Apparel Coming Soon",
-		//   difficulty: "Newbie",
-		//   url: "https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0",
-		//   dateCompleted: "2023-11-",
-		// },
+		{
+			href: "newsletter-sign-up-with-success-message",
+			name: "Newsletter sign-up form with success message",
+			difficulty: "Junior",
+			url: "https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv",
+			dateCompleted: "2023-11-18",
+		},
 		{
 			href: "intro-component-with-signup-form",
 			name: "Intro Component with Sign-up Form",

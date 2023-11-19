@@ -1,7 +1,7 @@
 import { fail } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
-export const actions: Actions = {
+export const actions = {
 	subscribe: async ({ request }) => {
 		const data = await request.formData();
 		const email = data.get("email") as string;
@@ -12,15 +12,14 @@ export const actions: Actions = {
 
 		const isValid = regex.test(email);
 
-		console.log(isValid);
-
 		return isValid
 			? {
 					success: "Thank you!",
+					email,
 			  }
 			: fail(422, {
-					error: "Please provide a valid email",
+					error: "Valid email required",
 					email,
 			  });
 	},
-};
+} satisfies Actions;
