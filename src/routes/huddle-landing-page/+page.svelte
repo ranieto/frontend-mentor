@@ -37,6 +37,7 @@
 	.container {
 		padding: 3rem;
 		margin: 1rem;
+		max-width: 1500px;
 	}
 
 	header {

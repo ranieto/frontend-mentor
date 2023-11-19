@@ -46,7 +46,7 @@
 		min-height: 100dvh;
 		padding: 2rem;
 		display: grid;
-		justify-content: center;
+		place-content: center;
 		color: var(--very-dark-blue);
 		background-color: var(--very-light-gray);
 	}

@@ -36,6 +36,7 @@
 		font-weight: 400;
 		min-height: 100dvh;
 		display: grid;
+		place-content: center;
 		color: var(--white);
 		background: no-repeat url("./bg-desktop.svg");
 		background-color: var(--violet);
