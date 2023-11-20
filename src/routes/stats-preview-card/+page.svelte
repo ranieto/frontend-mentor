@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<div class="image-container">
-		<img src={image} alt="People in an office with notebooks working" />
+		<img src={image} alt="People working with notebooks in an office" />
 		<div class="color-overlay"></div>
 	</div>
 </article>
