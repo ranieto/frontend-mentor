@@ -26,7 +26,7 @@
 		--dark-blue: oklch(31.61% 0.061 260.77deg);
 		--shadow-color: oklch(31.61% 0.061 260.77deg / 10%);
 
-		font-family: outfit, sans-serif;
+		font-family: Outfit, sans-serif;
 		min-height: 100dvh;
 		display: grid;
 		place-items: center;
