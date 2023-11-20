@@ -49,7 +49,7 @@
 
 		display: grid;
 		gap: 3rem;
-		margin: 1rem;
+		margin: 5rem 1rem 1rem;
 		max-width: 120ch;
 		min-width: 260px;
 	}
@@ -145,6 +145,7 @@
 			grid-template-columns: repeat(2, auto);
 			grid-template-rows: repeat(2, auto);
 			gap: 5rem;
+			margin: 1rem;
 		}
 
 		.info {
