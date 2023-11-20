@@ -72,7 +72,7 @@
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 2.5rem;
 		color: var(--gray);
 
 		& span {
