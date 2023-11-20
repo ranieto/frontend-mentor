@@ -15,11 +15,11 @@
 	};
 </script>
 
-<div class="card">
-	<header>
+<main>
+	<div class="top">
 		<img src={cardPattern} alt="" class="hero" />
 		<a href="/"><img src={profilePicture} alt="" class="profile-picture" /></a>
-	</header>
+	</div>
 	<div class="personal-info">
 		<div class="user-main-info">
 			<h1 class="user-name">{user.name}</h1>
@@ -42,10 +42,10 @@
 			<p class="account-info-title">Photos</p>
 		</div>
 	</div>
-</div>
+</main>
 
 <style>
-	.card {
+	main {
 		--border-radius: 15px;
 
 		background: var(--white);
@@ -61,7 +61,7 @@
 		display: block;
 	}
 
-	header {
+	.top {
 		position: relative;
 		margin-bottom: 4rem;
 	}

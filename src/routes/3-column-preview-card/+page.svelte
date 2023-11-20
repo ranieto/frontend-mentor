@@ -1,46 +1,22 @@
 <script lang="ts">
-	import iconLuxury from "./icon-luxury.svg";
-	import iconSedans from "./icon-sedans.svg";
-	import iconSuvs from "./icon-suvs.svg";
+	import type { PageData } from "./$types";
 
-	const items = [
-		{
-			title: "sedans",
-			description:
-				"Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.",
-			icon: iconSedans,
-			color: "var(--bright-orange)",
-		},
-		{
-			title: "suvs",
-			description:
-				"Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures.",
-			icon: iconSuvs,
-			color: "var(--dark-cyan)",
-		},
-		{
-			title: "luxury",
-			description:
-				"Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.",
-			icon: iconLuxury,
-			color: "var(--very-dark-cyan)",
-		},
-	];
+	export let data: PageData;
 </script>
 
-<div class="container">
-	{#each items as { title, description, icon, color } (title)}
+<main>
+	{#each data.items as { title, description, icon, color } (title)}
 		<div class="card" style={`--accent: ${color}`}>
-			<img src={icon} alt={`Icon depicting a ${title}`} />
+			<img src={icon} alt={title} />
 			<h1 class="title">{title}</h1>
 			<p>{description}</p>
 			<a href="/">Learn More</a>
 		</div>
 	{/each}
-</div>
+</main>
 
 <style>
-	.container {
+	main {
 		border-radius: 10px;
 		margin: 1rem;
 		overflow: hidden;

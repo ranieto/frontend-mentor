@@ -6,7 +6,7 @@
 	import nft from "./image-equilibrium.jpg";
 </script>
 
-<div class="card">
+<main>
 	<a href="/">
 		<div class="nft-container">
 			<img class="nft" src={nft} alt="A unique NFT" />
@@ -32,10 +32,10 @@
 			Creation of <a href="/">Jules Wyvern</a>
 		</p>
 	</div>
-</div>
+</main>
 
 <style>
-	.card {
+	main {
 		background: var(--very-dark-blue-card-bg);
 		padding: 1.5rem 1.5rem 2rem;
 		border-radius: 15px;
@@ -144,7 +144,7 @@
 	}
 
 	@media (width < 280px) {
-		.card {
+		main {
 			padding: 1rem;
 		}
 

@@ -1,4 +1,4 @@
-<div class="container">
+<main>
 	<div class="block main-block">
 		<h1>Join our community</h1>
 		<h2 class="lead">30-day, hassle-free money back guarantee</h2>
@@ -31,10 +31,10 @@
 			<li>New videos every week</li>
 		</ul>
 	</div>
-</div>
+</main>
 
 <style>
-	.container {
+	main {
 		--block-padding: 2.5rem;
 
 		display: grid;
