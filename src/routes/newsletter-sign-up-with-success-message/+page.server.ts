@@ -18,7 +18,7 @@ export const actions = {
 					email,
 			  }
 			: fail(422, {
-					error: "Valid email required",
+					error: email ? "Valid email required" : "Email required",
 					email,
 			  });
 	},

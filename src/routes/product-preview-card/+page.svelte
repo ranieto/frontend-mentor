@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
 	import MaterialSymbolsShoppingCartOutline from "~icons/material-symbols/shopping-cart-outline";
 	import productImage from "./image-product-desktop.jpg";
 </script>
@@ -16,7 +17,9 @@
 			<div class="price">$149.99</div>
 			<div class="original-price">$169.99</div>
 		</div>
-		<button><MaterialSymbolsShoppingCartOutline />Add to Cart</button>
+		<button on:click={() => goto("/")}>
+			<MaterialSymbolsShoppingCartOutline />Add to Cart
+		</button>
 	</div>
 </main>
 

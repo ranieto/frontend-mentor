@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from "$app/forms";
 	import MaterialSymbolsErrorCircleRounded from "~icons/material-symbols/error-circle-rounded";
 	import type { ActionData } from "./$types";
 
@@ -11,98 +12,91 @@
 </script>
 
 <main>
-	{#if form?.success}
-		<p>Nice job. (This wasn't part of the challenge, that's why it's ugly)</p>
-		<a href="/" style:color="white" style:text-decoration="underline">
-			Return home
-		</a>
-	{:else}
-		<div class="text">
-			<h1>Learn to code by watching others</h1>
-			<p>
-				See how experienced developers solve problems in real-time. Watching
-				scripted tutorials is great, but understanding how developers think is
-				invaluable.
+	<div class="text">
+		<h1>Learn to code by watching others</h1>
+		<p>
+			See how experienced developers solve problems in real-time. Watching
+			scripted tutorials is great, but understanding how developers think is
+			invaluable.
+		</p>
+	</div>
+
+	<div class="call-to-action">
+		<p class="trial">
+			<strong>Try it free 7 days</strong>
+			then $20/mo. thereafter
+		</p>
+
+		<form action="?/register" method="post" use:enhance>
+			<div class="input-wrapper" class:error={isFirstNameError}>
+				<input
+					type="text"
+					name="first-name"
+					placeholder="First Name"
+					value={form?.firstName || ""}
+				/>
+
+				<div class="error-icon">
+					{#if isFirstNameError}
+						<MaterialSymbolsErrorCircleRounded />
+					{/if}
+				</div>
+			</div>
+			{#if form?.firstNameError}
+				<p class="error-message">{form.firstNameError}</p>
+			{/if}
+			<div class="input-wrapper" class:error={isLastNameError}>
+				<input
+					type="text"
+					name="last-name"
+					placeholder="Last Name"
+					value={form?.lastName || ""}
+				/>
+				<div class="error-icon">
+					{#if isLastNameError}
+						<MaterialSymbolsErrorCircleRounded />
+					{/if}
+				</div>
+			</div>
+			{#if form?.lastNameError}
+				<p class="error-message">{form.lastNameError}</p>
+			{/if}
+			<div class="input-wrapper" class:error={isEmailError}>
+				<input
+					type="text"
+					name="email"
+					placeholder="Email Address"
+					value={form?.email || ""}
+				/>
+
+				<div class="error-icon">
+					{#if isEmailError}
+						<MaterialSymbolsErrorCircleRounded />
+					{/if}
+				</div>
+			</div>
+			{#if form?.emailError}
+				<p class="error-message">{form.emailError}</p>
+			{/if}
+			<div class="input-wrapper" class:error={isPasswordError}>
+				<input type="password" name="password" placeholder="Password" />
+				<div class="error-icon">
+					{#if isPasswordError}
+						<MaterialSymbolsErrorCircleRounded />
+					{/if}
+				</div>
+			</div>
+			{#if form?.passwordError}
+				<p class="error-message">{form.passwordError}</p>
+			{/if}
+			<button>Claim your free trial</button>
+			<p class="terms">
+				By clicking the button, you are agreeing to our <a href="/">
+					Terms and Services
+				</a>
 			</p>
-		</div>
-
-		<div class="call-to-action">
-			<p class="try">
-				<strong>Try it free 7 days</strong>
-				then $20/mo. thereafter
-			</p>
-
-			<form action="?/register" method="post">
-				<div class="input-wrapper" class:error={isFirstNameError}>
-					<input
-						type="text"
-						name="first-name"
-						placeholder="First Name"
-						value={form?.firstName || ""}
-					/>
-
-					<div class="error-icon">
-						{#if isFirstNameError}
-							<MaterialSymbolsErrorCircleRounded />
-						{/if}
-					</div>
-				</div>
-				{#if form?.firstNameError}
-					<p class="error-message">{form.firstNameError}</p>
-				{/if}
-				<div class="input-wrapper" class:error={isLastNameError}>
-					<input
-						type="text"
-						name="last-name"
-						placeholder="Last Name"
-						value={form?.lastName || ""}
-					/>
-					<div class="error-icon">
-						{#if isLastNameError}
-							<MaterialSymbolsErrorCircleRounded />
-						{/if}
-					</div>
-				</div>
-				{#if form?.lastNameError}
-					<p class="error-message">{form.lastNameError}</p>
-				{/if}
-				<div class="input-wrapper" class:error={isEmailError}>
-					<input
-						type="text"
-						name="email"
-						placeholder="Email Address"
-						value={form?.email || ""}
-					/>
-
-					<div class="error-icon">
-						{#if isEmailError}
-							<MaterialSymbolsErrorCircleRounded />
-						{/if}
-					</div>
-				</div>
-				{#if form?.emailError}
-					<p class="error-message">{form.emailError}</p>
-				{/if}
-				<div class="input-wrapper" class:error={isPasswordError}>
-					<input type="password" name="password" placeholder="Password" />
-					<div class="error-icon">
-						{#if isPasswordError}
-							<MaterialSymbolsErrorCircleRounded />
-						{/if}
-					</div>
-				</div>
-				{#if form?.passwordError}
-					<p class="error-message">{form.passwordError}</p>
-				{/if}
-				<button>Claim your free trial</button>
-				<p class="terms">
-					By clicking the button, you are agreeing to our <a href="/">
-						Terms and Services
-					</a>
-				</p>
-			</form>
-		</div>
-	{/if}
+		</form>
+	</div>
 </main>
 
 <style>
@@ -132,6 +126,10 @@
 		color: var(--red);
 		font-weight: 600;
 		text-decoration: none;
+
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 
 	form {
@@ -162,6 +160,7 @@
 		border: none;
 		font-weight: 600;
 		width: 100%;
+		padding-inline: 1rem;
 
 		&:focus {
 			outline: none;
@@ -214,7 +213,7 @@
 		gap: 2rem;
 	}
 
-	.try {
+	.trial {
 		background: var(--accent);
 		padding: 1rem;
 		border-radius: var(--main-border-radius);

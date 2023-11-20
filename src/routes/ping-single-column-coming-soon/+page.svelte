@@ -62,6 +62,7 @@
 <style>
 	main {
 		margin: 2rem;
+		padding-top: 2rem;
 		max-width: 50ch;
 		display: flex;
 		flex-direction: column;
@@ -88,7 +89,7 @@
 
 	input {
 		border: 1px solid var(--pale-blue);
-		padding: 0.7rem 1rem;
+		padding: 0.7rem 2rem;
 		border-radius: 30px;
 		width: 100%;
 		font-size: 0.8rem;

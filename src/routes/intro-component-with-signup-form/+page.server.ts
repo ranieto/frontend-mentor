@@ -1,4 +1,4 @@
-import { fail, type Actions } from "@sveltejs/kit";
+import { fail, redirect, type Actions } from "@sveltejs/kit";
 
 export const actions: Actions = {
 	register: async ({ request }) => {
@@ -14,7 +14,7 @@ export const actions: Actions = {
 
 		const isValidEmail = regex.test(email);
 
-		if (!firstName || !lastName || !email || !password || !isValidEmail) {
+		if (!firstName || !lastName || !password || !isValidEmail) {
 			return fail(422, {
 				firstNameError: firstName ? undefined : "First Name cannot be empty",
 				lastNameError: lastName ? undefined : "Last Name cannot be empty",
@@ -30,6 +30,6 @@ export const actions: Actions = {
 			});
 		}
 
-		return { success: "Thank you!" };
+		throw redirect(303, "/");
 	},
 };

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
 	import musicIcon from "./icon-music.svg";
 	import hero from "./illustration-hero.svg";
 </script>
@@ -19,8 +20,10 @@
 			</div>
 			<a href="/">Change</a>
 		</div>
-		<button class="btn-pay">Proceed to Payment</button>
-		<button class="btn-cancel">Cancel Order</button>
+		<button class="btn-pay" on:click={() => goto("/")}>
+			Proceed to Payment
+		</button>
+		<button class="btn-cancel" on:click={() => goto("/")}>Cancel Order</button>
 	</div>
 </main>
 

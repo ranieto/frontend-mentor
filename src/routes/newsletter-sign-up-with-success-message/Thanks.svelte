@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
 	import CheckCircle from "~icons/mdi/check-circle";
 
 	export let email: string;
@@ -12,7 +13,7 @@
 		<strong>{email}.</strong>
 		Please open it and click the button inside to confirm your subscription.
 	</p>
-	<a href="/">Dismiss message</a>
+	<button on:click={() => goto("/")}>Dismiss message</button>
 </main>
 
 <style>
@@ -29,7 +30,7 @@
 		font-weight: 700;
 	}
 
-	a {
+	button {
 		background: var(--dark-slate-grey);
 		border: 0;
 		color: var(--white);
@@ -37,8 +38,7 @@
 		border-radius: 7px;
 		width: 100%;
 		font-size: 0.9rem;
-		text-decoration: none;
-		text-align: center;
+		cursor: pointer;
 
 		&:hover {
 			background: var(--button-gradient);
