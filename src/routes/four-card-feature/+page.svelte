@@ -74,7 +74,6 @@
 		grid-template-columns: repeat(3, 1fr);
 
 		@media (width < 100ch) {
-			/* grid-template-columns: unset; */
 			display: flex;
 			flex-direction: column;
 		}
