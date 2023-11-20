@@ -7,9 +7,9 @@
 </script>
 
 <div class="container">
-	<header><img src={logo} alt="" /></header>
+	<header><img src={logo} alt="Huddle logo" /></header>
 	<main>
-		<img src={mockups} alt="" />
+		<img src={mockups} alt="Mockup of the Huddle platform" />
 		<div class="content">
 			<h1 class="title">Build The Community Your Fans Will Love</h1>
 			<p>
