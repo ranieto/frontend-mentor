@@ -31,6 +31,8 @@
 	}
 
 	.app {
+		--main-border-radius: 20px;
+
 		/* Primary */
 		--block-transparency: 10%;
 		--light-red: hsl(0deg 100% 67%);
@@ -47,6 +49,16 @@
 		--light-royal-blue: hsl(241deg 81% 54%); /* background */
 		--violet-blue: hsl(256deg 72% 46% / 100%); /* circle */
 		--persian-blue: hsl(241deg 72% 46% / 0%); /* circle */
+		--main-gradient: linear-gradient(
+			to bottom,
+			var(--light-slate-blue),
+			var(--light-royal-blue)
+		);
+		--score-gradient: linear-gradient(
+			to bottom,
+			var(--violet-blue),
+			var(--persian-blue)
+		);
 
 		/* Neutral */
 		--white: hsl(0deg 0% 100%);

@@ -12,7 +12,7 @@
 	};
 </script>
 
-<div class="container">
+<main>
 	<div class="result-block">
 		<h1 class="result-title">Your Results</h1>
 		<div class="score-container">
@@ -64,22 +64,16 @@
 		</div>
 		<a class="proceed-btn" href="/">Continue</a>
 	</div>
-</div>
+</main>
 
 <style>
-	.container {
-		--main-gradient: linear-gradient(
-			to bottom,
-			var(--light-slate-blue),
-			var(--light-royal-blue)
-		);
-		--main-border-radius: 20px;
-
+	main {
 		background: var(--white);
 		border-radius: var(--main-border-radius);
 		overflow: hidden;
 		max-width: 40ch;
 		margin: 0.5rem;
+		min-width: 275px;
 
 		@media (width > 80ch) {
 			display: grid;
@@ -117,11 +111,7 @@
 		flex-direction: column;
 		justify-content: center;
 		border-radius: 50%;
-		background: linear-gradient(
-			to bottom,
-			var(--violet-blue),
-			var(--persian-blue)
-		);
+		background: var(--score-gradient);
 		position: relative;
 	}
 
