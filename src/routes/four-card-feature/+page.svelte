@@ -7,8 +7,10 @@
 
 <main>
 	<div class="intro-texts">
-		<p class="big light center">Reliable, efficient delivery</p>
-		<p class="big bold center">Powered by Technology</p>
+		<h1>
+			<span class="big light center">Reliable, efficient delivery</span>
+			<span class="big bold center">Powered by Technology</span>
+		</h1>
 		<p class="center description">
 			Our Artificial Intelligence powered tools use millions of project data
 			points to ensure that your project is successful
@@ -41,6 +43,14 @@
 </main>
 
 <style>
+	main {
+		max-width: 120ch;
+	}
+
+	h1 span {
+		display: block;
+	}
+
 	.intro-texts {
 		max-width: 60ch;
 		margin: 0 auto;
@@ -48,6 +58,7 @@
 
 	.description {
 		margin-top: 1.5rem;
+		color: var(--grayish-blue);
 	}
 
 	.light {
