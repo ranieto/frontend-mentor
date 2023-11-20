@@ -23,6 +23,7 @@
 		/* Primary */
 		--tomato: hsl(4deg 100% 67%);
 		--tomato-shadow: hsl(4deg 100% 67% / 40%);
+		--tomato-bg: hsl(4deg 100% 67% / 10%);
 		--gradient-start: hsl(348deg 79% 65% / 100%);
 		--button-gradient: linear-gradient(
 			135deg,

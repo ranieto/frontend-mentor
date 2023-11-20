@@ -42,6 +42,7 @@
 					type="text"
 					name="email"
 					placeholder="email@company.com"
+					class:error={errorMessage}
 					bind:value={email}
 				/>
 			</div>
@@ -50,7 +51,7 @@
 	</div>
 
 	<picture>
-		<source srcset={illustrationDesktop} media="(width > 618px)" />
+		<source srcset={illustrationDesktop} media="(width > 645px)" />
 		<img src={illustrationMobile} alt="" />
 	</picture>
 </main>
@@ -77,7 +78,7 @@
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 2.5rem;
 		font-weight: 700;
 	}
 
@@ -137,6 +138,12 @@
 		}
 	}
 
+	.error {
+		border: 1px solid var(--tomato);
+		color: var(--tomato);
+		background: var(--tomato-bg);
+	}
+
 	button {
 		background: var(--dark-slate-grey);
 		border: 0;
@@ -153,11 +160,11 @@
 		}
 	}
 
-	@media (width > 618px) {
+	@media (width > 645px) {
 		main {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: 1.2fr 1fr;
 			height: unset;
-			max-width: 50rem;
+			max-width: 53rem;
 			border-radius: 17px;
 			margin: 1rem;
 		}
@@ -174,7 +181,7 @@
 		}
 
 		.content {
-			padding: 3rem;
+			padding: 4rem 3rem 3rem;
 		}
 	}
 </style>
