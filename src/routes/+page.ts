@@ -5,11 +5,11 @@ import type { PageLoad } from "./$types";
 export const load = (() => {
 	const routes: Challenge[] = [
 		{
-			href: "advice-generator-app",
+			href: "advice-generator-app-v2",
 			name: "Advice Generator App",
 			difficulty: "Junior",
 			url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
-			dateCompleted: "2023-11-20",
+			dateCompleted: "2023-11-23",
 		},
 		{
 			href: "newsletter-sign-up-with-success-message",
