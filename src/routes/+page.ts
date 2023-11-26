@@ -5,8 +5,15 @@ import type { PageLoad } from "./$types";
 export const load = (() => {
 	const routes: Challenge[] = [
 		{
+			href: "age-calculator",
+			name: "Age Calculator",
+			difficulty: "Junior",
+			url: "https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q",
+			dateCompleted: "2023-11-26",
+		},
+		{
 			href: "advice-generator-app-v2",
-			name: "Advice Generator App",
+			name: "Advice Generator",
 			difficulty: "Junior",
 			url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
 			dateCompleted: "2023-11-23",

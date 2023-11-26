@@ -7,10 +7,10 @@
 	import desktopDivider from "./pattern-divider-desktop.svg";
 	import mobileDivider from "./pattern-divider-mobile.svg";
 
-	let loading = false;
-
 	export let data: PageServerData;
 	export let form: ActionData;
+
+	let loading = false;
 
 	$: advice = form ? form.advice : data?.advice;
 	$: id = form ? form.id : data?.id;
