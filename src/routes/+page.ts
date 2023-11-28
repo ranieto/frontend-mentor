@@ -4,6 +4,20 @@ import type { PageLoad } from "./$types";
 
 export const load = (() => {
 	const routes: Challenge[] = [
+		// {
+		// 	href: "social-media-dashboard-with-theme-switcher",
+		// 	name: "Social Media Dashboard with Theme Switcher",
+		// 	difficulty: "Junior",
+		// 	url: "https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H",
+		// 	dateCompleted: "In progress",
+		// },
+		{
+			href: "faq-accordion",
+			name: "FAQ Accordion",
+			difficulty: "Newbie",
+			url: "https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam",
+			dateCompleted: "In progress",
+		},
 		{
 			href: "age-calculator",
 			name: "Age Calculator",
