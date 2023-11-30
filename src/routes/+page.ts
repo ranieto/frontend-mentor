@@ -12,11 +12,18 @@ export const load = (() => {
 		// 	dateCompleted: "In progress",
 		// },
 		{
+			href: "base-apparel-coming-soon",
+			name: "Base Apparel Coming Soon",
+			difficulty: "Newbie",
+			url: "https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0",
+			dateCompleted: "2023-11-30",
+		},
+		{
 			href: "faq-accordion",
 			name: "FAQ Accordion",
 			difficulty: "Newbie",
 			url: "https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam",
-			dateCompleted: "In progress",
+			dateCompleted: "2023-11-28",
 		},
 		{
 			href: "age-calculator",
