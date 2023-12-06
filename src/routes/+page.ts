@@ -11,6 +11,13 @@ export const load = (() => {
 		// 	url: "https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H",
 		// 	dateCompleted: "In progress",
 		// },
+		// {
+		// 	href: "article-preview",
+		// 	name: "Article Preview",
+		// 	difficulty: "Newbie",
+		// 	url: "https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT",
+		// 	dateCompleted: "In progress",
+		// },
 		{
 			href: "base-apparel-coming-soon",
 			name: "Base Apparel Coming Soon",
@@ -19,7 +26,7 @@ export const load = (() => {
 			dateCompleted: "2023-11-30",
 		},
 		{
-			href: "faq-accordion",
+			href: "faq-accordion-v2",
 			name: "FAQ Accordion",
 			difficulty: "Newbie",
 			url: "https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam",
