@@ -66,7 +66,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		background: var(--white);
 		border-radius: var(--main-border-radius);

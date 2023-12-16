@@ -99,7 +99,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		--main-box-shadow: var(--shadow) 0 7px;
 		--main-border-radius: 10px;

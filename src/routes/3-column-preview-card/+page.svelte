@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { PageData } from "./$types";
-
-	export let data: PageData;
+	export let data;
+	const { items } = data;
 </script>
 
 <main>
-	{#each data.items as { title, description, icon, color } (title)}
+	{#each items as { title, description, icon, color } (title)}
 		<div class="card" style={`--accent: ${color}`}>
 			<img src={icon} alt={title} />
 			<h1 class="title">{title}</h1>
@@ -15,7 +14,7 @@
 	{/each}
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		border-radius: 10px;
 		margin: 1rem;
@@ -34,7 +33,7 @@
 		display: flex;
 		gap: 1.3rem;
 		flex-direction: column;
-		align-items: start;
+		align-items: flex-start;
 		background: var(--accent);
 	}
 

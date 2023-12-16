@@ -2,7 +2,7 @@
 	<slot />
 </div>
 
-<style>
+<style lang="postcss">
 	@font-face {
 		font-family: Roboto;
 		font-weight: 400;

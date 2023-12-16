@@ -49,7 +49,7 @@
 	</picture>
 </div>
 
-<style>
+<style lang="postcss">
 	.page {
 		background: var(--gradient-bg);
 		display: grid;
@@ -82,7 +82,7 @@
 		letter-spacing: 0.5rem;
 		line-height: 3.5rem;
 
-		& span {
+		span {
 			font-weight: 600;
 			color: var(--dark-grayish-red);
 		}

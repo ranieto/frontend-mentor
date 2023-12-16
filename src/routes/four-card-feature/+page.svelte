@@ -42,7 +42,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		max-width: 120ch;
 	}
@@ -100,18 +100,18 @@
 		border-radius: 5px;
 		box-shadow: var(--shadow) 0 10px 10px;
 
-		& h2 {
+		h2 {
 			font-weight: 600;
 			font-size: 1.3rem;
 		}
 
-		& p {
+		p {
 			color: var(--grayish-blue);
 			font-size: 0.9rem;
 			flex: 1;
 		}
 
-		& .icon {
+		.icon {
 			align-self: end;
 		}
 	}

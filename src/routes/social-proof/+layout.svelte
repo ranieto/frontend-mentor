@@ -2,7 +2,7 @@
 	<slot />
 </div>
 
-<style>
+<style lang="postcss">
 	@font-face {
 		font-family: "League Spartan";
 		font-weight: 400;

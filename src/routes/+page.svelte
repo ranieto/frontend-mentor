@@ -1,16 +1,16 @@
 <script lang="ts">
 	import MdiLaunch from "~icons/mdi/launch";
-	import type { PageData } from "./$types";
 	import Badge from "./Badge.svelte";
 
-	export let data: PageData;
+	export let data;
+	const { routes } = data;
 </script>
 
 <div class="container">
 	<header><h1>Frontend Mentor Challenges</h1></header>
 	<main>
 		<ul>
-			{#each data.routes as { name, href, dateCompleted, difficulty, url } (href)}
+			{#each routes as { name, href, dateCompleted, difficulty, url } (href)}
 				<a {href}>
 					<li>
 						<div class="left-block">
@@ -30,7 +30,7 @@
 	</main>
 </div>
 
-<style>
+<style lang="postcss">
 	.container {
 		display: flex;
 		flex-direction: column;

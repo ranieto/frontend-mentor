@@ -2,7 +2,7 @@
 	<slot />
 </div>
 
-<style>
+<style lang="postcss">
 	@font-face {
 		font-family: Manrope;
 		font-weight: 400;

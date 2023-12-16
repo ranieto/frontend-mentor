@@ -34,7 +34,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		background: var(--very-dark-blue-card-bg);
 		padding: 1.5rem 1.5rem 2rem;
@@ -117,7 +117,7 @@
 		display: flex;
 		justify-content: space-between;
 
-		& p {
+		p {
 			display: flex;
 			align-items: center;
 			gap: 0.3rem;

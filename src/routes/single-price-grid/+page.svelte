@@ -33,7 +33,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		--block-padding: 2.5rem;
 
@@ -92,11 +92,11 @@
 		color: var(--grayish-blue);
 		grid-column: 1 / -1;
 
-		& h1 {
+		h1 {
 			color: var(--cyan);
 		}
 
-		& .lead {
+		.lead {
 			color: var(--bright-yellow);
 		}
 	}
@@ -108,7 +108,7 @@
 	.motivation-block {
 		background: var(--light-cyan);
 
-		& ul {
+		ul {
 			opacity: 0.7;
 		}
 	}

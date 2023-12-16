@@ -59,7 +59,7 @@
 	</footer>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		margin: 2rem;
 		padding-top: 2rem;
@@ -75,7 +75,7 @@
 		font-size: 2.5rem;
 		color: var(--gray);
 
-		& span {
+		span {
 			font-weight: 700;
 			color: var(--very-dark-blue);
 		}
@@ -164,7 +164,7 @@
 		align-items: center;
 		gap: 1rem;
 
-		& p {
+		p {
 			font-size: 0.7rem;
 		}
 	}

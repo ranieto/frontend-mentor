@@ -56,7 +56,7 @@
 	</picture>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		background: var(--white);
 		height: 100dvh;

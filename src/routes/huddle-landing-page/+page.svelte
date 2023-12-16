@@ -33,7 +33,7 @@
 	</main>
 </div>
 
-<style>
+<style lang="postcss">
 	.container {
 		padding: 3rem;
 		margin: 1rem;
@@ -82,7 +82,7 @@
 	.social-icons {
 		display: flex;
 		gap: 1rem;
-		justify-content: end;
+		justify-content: flex-end;
 		grid-column: 1 / -1;
 	}
 

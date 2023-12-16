@@ -9,10 +9,4 @@ export default defineConfig({
 			compiler: "svelte",
 		}),
 	],
-	css: {
-		transformer: "lightningcss",
-	},
-	build: {
-		cssMinify: "lightningcss",
-	},
 });

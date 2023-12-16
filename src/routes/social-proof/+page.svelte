@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Star from "~icons/twemoji/star";
-	import type { PageData } from "./$types";
 
-	export let data: PageData;
+	export let data;
+	const { raters, testimonials } = data;
 </script>
 
 <main>
@@ -14,7 +14,7 @@
 		</p>
 	</div>
 	<div class="ratings">
-		{#each data.raters as rater (rater)}
+		{#each raters as rater (rater)}
 			<div class="rating-wrapper">
 				<div class="rating-box">
 					<div class="stars">
@@ -30,7 +30,7 @@
 		{/each}
 	</div>
 	<div class="testimonials">
-		{#each data.testimonials as { name, testimonial, picture: src } (name)}
+		{#each testimonials as { name, testimonial, picture: src } (name)}
 			<div class="testimonial-card">
 				<img {src} class="client-photo" alt="Headshot of {name}" />
 				<div class="client-info">
@@ -43,7 +43,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		--border-radius: 10px;
 

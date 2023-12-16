@@ -33,7 +33,7 @@
 	</div>
 </article>
 
-<style>
+<style lang="postcss">
 	article {
 		border-radius: 10px;
 		overflow: hidden;
@@ -68,7 +68,7 @@
 		flex-direction: column;
 		gap: 1rem;
 
-		& p {
+		p {
 			flex: 1;
 		}
 	}

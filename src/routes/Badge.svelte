@@ -27,7 +27,7 @@
 	<p style:color={colorFor[difficulty]}>{difficulty}</p>
 </div>
 
-<style>
+<style lang="postcss">
 	.container {
 		display: flex;
 		border-width: 2px;

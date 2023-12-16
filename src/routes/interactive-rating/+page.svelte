@@ -60,7 +60,7 @@
 	{/if}
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		background: var(--dark-blue);
 		padding: 2rem;
@@ -81,7 +81,7 @@
 		align-items: center;
 		padding: 1rem 0;
 
-		& img {
+		img {
 			max-width: 20ch;
 		}
 	}

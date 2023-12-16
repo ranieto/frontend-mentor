@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Arrow from "~icons/material-symbols/keyboard-arrow-down";
-	import type { PageData } from "./$types";
 	import illustrationBox from "./illustration-box-desktop.svg";
 	import illustrationMobile from "./illustration-woman-online-mobile.svg";
 
-	export let data: PageData;
+	export let data;
+	const { faq } = data;
 </script>
 
 <article>
@@ -18,7 +18,7 @@
 	<div class="content">
 		<h1>FAQ</h1>
 		<div class="items">
-			{#each data.faq as { question, answer }}
+			{#each faq as { question, answer }}
 				<button>
 					<h2 class="question">{question}</h2>
 					<div class="arrow">
@@ -31,7 +31,7 @@
 	</div>
 </article>
 
-<style>
+<style lang="postcss">
 	article {
 		background: #fff;
 		padding: 0 2rem 4rem;
@@ -113,16 +113,16 @@
 	}
 
 	button:focus {
-		& .question {
+		.question {
 			color: var(--very-dark-desaturated-blue);
 			font-weight: 700;
 		}
 
-		& .answer {
+		.answer {
 			display: block;
 		}
 
-		& .arrow {
+		.arrow {
 			rotate: 180deg;
 		}
 	}

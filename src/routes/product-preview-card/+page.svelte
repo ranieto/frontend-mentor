@@ -23,7 +23,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		margin: 1rem;
 		border-radius: 10px;

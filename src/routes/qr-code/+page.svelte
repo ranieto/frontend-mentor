@@ -15,7 +15,7 @@
 	</a>
 </main>
 
-<style>
+<style lang="postcss">
 	a {
 		all: unset;
 		cursor: pointer;

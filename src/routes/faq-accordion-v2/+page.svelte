@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Arrow from "~icons/material-symbols/keyboard-arrow-down";
-	import type { PageData } from "./$types";
 	import illustrationBox from "./illustration-box-desktop.svg";
 	import illustrationMobile from "./illustration-woman-online-mobile.svg";
 
-	export let data: PageData;
+	export let data;
+	const { faq } = data;
 </script>
 
 <article>
@@ -18,7 +18,7 @@
 	<div class="content">
 		<h1>FAQ</h1>
 		<div class="items">
-			{#each data.faq as { question, answer }, index (index)}
+			{#each faq as { question, answer }, index (index)}
 				<div class="item">
 					<label for={`q${index}`}>
 						<h2>{question}</h2>
@@ -34,7 +34,7 @@
 	</div>
 </article>
 
-<style>
+<style lang="postcss">
 	article {
 		background: #fff;
 		padding: 0 2rem 4rem;
@@ -117,16 +117,16 @@
 	}
 
 	.item:has(input[type="checkbox"]:checked) {
-		& .answer {
+		.answer {
 			max-height: 10rem;
 			margin-top: 1rem;
 		}
 
-		& .arrow {
+		.arrow {
 			rotate: 180deg;
 		}
 
-		& h2 {
+		h2 {
 			font-weight: 700;
 
 			&:hover {

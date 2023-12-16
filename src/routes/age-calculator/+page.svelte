@@ -77,7 +77,7 @@
 	</div>
 </article>
 
-<style>
+<style lang="postcss">
 	article {
 		background: var(--white);
 		padding: 2.3rem;

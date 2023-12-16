@@ -2,7 +2,7 @@
 	<slot />
 </main>
 
-<style>
+<style lang="postcss">
 	@font-face {
 		font-family: Inter;
 		font-weight: 400;

@@ -1,19 +1,20 @@
 <script lang="ts">
 	import { invalidateAll } from "$app/navigation";
 	import MdiDice from "~icons/mdi/dice-5";
-	import type { PageServerData } from "./$types";
 	import desktopDivider from "./pattern-divider-desktop.svg";
 	import mobileDivider from "./pattern-divider-mobile.svg";
 
 	let loading = false;
 
-	export let data: PageServerData;
+	export let data;
+
+	const { id, advice } = data;
 </script>
 
 <main>
-	<h1>Advice #{data?.id}</h1>
+	<h1>Advice #{id}</h1>
 	<q>
-		{data?.advice}
+		{advice}
 	</q>
 
 	<picture>
@@ -34,7 +35,7 @@
 	</button>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		position: relative;
 		text-align: center;

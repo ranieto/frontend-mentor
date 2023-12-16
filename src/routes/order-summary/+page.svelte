@@ -27,7 +27,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		--border-radius: 10px;
 

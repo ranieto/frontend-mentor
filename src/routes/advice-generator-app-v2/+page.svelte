@@ -3,12 +3,11 @@
 	import { slide } from "svelte/transition";
 	import MdiDice from "~icons/mdi/dice-5";
 	import TablerLoader2 from "~icons/tabler/loader-2";
-	import type { ActionData, PageServerData } from "./$types";
 	import desktopDivider from "./pattern-divider-desktop.svg";
 	import mobileDivider from "./pattern-divider-mobile.svg";
 
-	export let data: PageServerData;
-	export let form: ActionData;
+	export let data;
+	export let form;
 
 	let loading = false;
 
@@ -51,7 +50,7 @@
 	</form>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		position: relative;
 		text-align: center;

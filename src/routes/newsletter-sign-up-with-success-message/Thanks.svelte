@@ -16,7 +16,7 @@
 	<button on:click={() => goto("/")}>Dismiss message</button>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		background: var(--white);
 		height: 100dvh;
