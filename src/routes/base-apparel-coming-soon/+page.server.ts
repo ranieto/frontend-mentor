@@ -1,22 +1,23 @@
-import { fail, redirect } from "@sveltejs/kit";
-import type { Actions } from "./$types";
+import { fail, redirect, type Actions } from "@sveltejs/kit";
+import { superValidate } from "sveltekit-superforms/server";
+import { z } from "zod";
+import type { PageServerLoad } from "./$types";
+
+const schema = z.object({
+	email: z.string().email("Please provide a valid email"),
+});
+
+export const load = (async () => {
+	const form = await superValidate(schema);
+	return { form };
+}) satisfies PageServerLoad;
 
 export const actions = {
 	subscribe: async ({ request }) => {
-		const data = await request.formData();
-		const email = data.get("email") as string;
+		const form = await superValidate(request, schema);
 
-		const regex = new RegExp(
-			"^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
-		);
-
-		const isValid = regex.test(email);
-
-		if (!isValid) {
-			return fail(422, {
-				error: "Please provide a valid email",
-				email,
-			});
+		if (!form.valid) {
+			return fail(400, { form });
 		}
 
 		redirect(303, "/");

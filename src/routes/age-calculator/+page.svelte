@@ -1,58 +1,69 @@
 <script lang="ts">
-	import { enhance } from "$app/forms";
+	import { superForm } from "sveltekit-superforms/client";
 	import Arrow from "~icons/guidance/down-2-short-arrow";
-	import type { ActionData } from "./$types";
 
-	export let form: ActionData;
+	export let data;
+	const { form: sform, errors, enhance } = superForm(data.form);
 
-	$: ageYears = form?.years || "--";
-	$: ageMonths = form?.months || "--";
-	$: ageDays = form?.days || "--";
-	$: isDayError = form?.dayError || form?.dateError;
-	$: isMonthError = form?.monthError || form?.dateError;
-	$: isYearError = form?.yearError || form?.dateError;
+	export let form;
+
+	$: ageYears = form?.years === undefined ? "--" : form?.years;
+	$: ageMonths = form?.months === undefined ? "--" : form?.months;
+	$: ageDays = form?.days === undefined ? "--" : form?.days;
+	$: isDateError =
+		!!$errors._errors?.length &&
+		!$errors.day?.length &&
+		!$errors.month?.length &&
+		!$errors.year?.length;
+	$: markDayWithError = !!$errors.day?.length || isDateError;
+	$: markMonthWithError = !!$errors.month?.length || isDateError;
+	$: markYearWithError = !!$errors.year?.length || isDateError;
+	$: dateErrorMessage = isDateError ? $errors._errors?.at(0) : "";
+	$: dayErrorMessage = $errors.day || dateErrorMessage || "";
+	$: monthErrorMessage = $errors.month || "";
+	$: yearErrorMessage = $errors.year || "";
 </script>
 
 <article>
 	<form action="?/calculate" method="post" use:enhance>
 		<div class="inputs">
 			<label for="day">
-				<p class="label-text" class:error-text={isDayError}>Day</p>
+				<p class="label-text" class:error-text={markDayWithError}>Day</p>
 				<input
 					name="day"
 					type="number"
 					inputmode="numeric"
-					value={form?.day || ""}
-					class:error-input={isDayError}
+					bind:value={$sform.day}
 					placeholder="DD"
+					class:error-input={markDayWithError}
 				/>
 				<p class="error-message error-text">
-					{form?.dayError || form?.dateError || ""}
+					{dayErrorMessage}
 				</p>
 			</label>
 			<label for="month">
-				<p class="label-text" class:error-text={isMonthError}>Month</p>
+				<p class="label-text" class:error-text={markMonthWithError}>Month</p>
 				<input
 					name="month"
 					type="number"
 					inputmode="numeric"
-					value={form?.month || ""}
+					value={$sform.month}
 					placeholder="MM"
-					class:error-input={isMonthError}
+					class:error-input={markMonthWithError}
 				/>
-				<p class="error-message error-text">{form?.monthError || ""}</p>
+				<p class="error-message error-text">{monthErrorMessage}</p>
 			</label>
 			<label for="year">
-				<p class="label-text" class:error-text={isYearError}>Year</p>
+				<p class="label-text" class:error-text={markYearWithError}>Year</p>
 				<input
 					name="year"
 					type="number"
 					inputmode="numeric"
-					value={form?.year || ""}
+					value={$sform.year}
 					placeholder="YYYY"
-					class:error-input={isYearError}
+					class:error-input={markYearWithError}
 				/>
-				<p class="error-message error-text">{form?.yearError || ""}</p>
+				<p class="error-message error-text">{yearErrorMessage}</p>
 			</label>
 		</div>
 

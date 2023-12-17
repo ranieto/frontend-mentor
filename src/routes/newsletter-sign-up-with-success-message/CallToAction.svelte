@@ -44,6 +44,7 @@
 					placeholder="email@company.com"
 					class:error={errorMessage}
 					bind:value={email}
+					on:input={() => (errorMessage = "")}
 				/>
 			</div>
 			<button>Subscribe to monthly newsletter</button>

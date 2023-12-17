@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { enhance } from "$app/forms";
+	import { superForm } from "sveltekit-superforms/client";
 	import MaterialSymbolsErrorCircleRounded from "~icons/material-symbols/error-circle-rounded";
-	import type { ActionData } from "./$types";
 
-	export let form: ActionData;
-
-	$: isFirstNameError = form?.firstNameError !== undefined;
-	$: isLastNameError = form?.lastNameError !== undefined;
-	$: isEmailError = form?.emailError !== undefined;
-	$: isPasswordError = form?.passwordError !== undefined;
+	export let data;
+	const { form, errors, enhance } = superForm(data.form);
 </script>
 
 <main>
@@ -28,68 +23,80 @@
 		</p>
 
 		<form action="?/register" method="post" use:enhance>
-			<div class="input-wrapper" class:error={isFirstNameError}>
+			<div class="input-wrapper" class:error={$errors.firstName}>
 				<input
 					type="text"
-					name="first-name"
+					name="firstName"
 					placeholder="First Name"
-					value={form?.firstName || ""}
+					bind:value={$form.firstName}
+					aria-invalid={$errors.firstName ? "true" : undefined}
 				/>
-
 				<div class="error-icon">
-					{#if isFirstNameError}
+					{#if $errors.firstName}
 						<MaterialSymbolsErrorCircleRounded />
 					{/if}
 				</div>
 			</div>
-			{#if form?.firstNameError}
-				<p class="error-message">{form.firstNameError}</p>
+			{#if $errors.firstName}
+				<p class="error-message">{$errors.firstName}</p>
 			{/if}
-			<div class="input-wrapper" class:error={isLastNameError}>
+
+			<div class="input-wrapper" class:error={$errors.lastName}>
 				<input
 					type="text"
-					name="last-name"
+					name="lastName"
 					placeholder="Last Name"
-					value={form?.lastName || ""}
+					bind:value={$form.lastName}
+					aria-invalid={$errors.lastName ? "true" : undefined}
 				/>
 				<div class="error-icon">
-					{#if isLastNameError}
+					{#if $errors.lastName}
 						<MaterialSymbolsErrorCircleRounded />
 					{/if}
 				</div>
 			</div>
-			{#if form?.lastNameError}
-				<p class="error-message">{form.lastNameError}</p>
+			{#if $errors.lastName}
+				<p class="error-message">{$errors.lastName}</p>
 			{/if}
-			<div class="input-wrapper" class:error={isEmailError}>
+
+			<div class="input-wrapper" class:error={$errors.email}>
 				<input
 					type="text"
 					name="email"
 					placeholder="Email Address"
-					value={form?.email || ""}
+					bind:value={$form.email}
+					aria-invalid={$errors.email ? "true" : undefined}
 				/>
+				<div class="error-icon">
+					{#if $errors.email}
+						<MaterialSymbolsErrorCircleRounded />
+					{/if}
+				</div>
+			</div>
+			{#if $errors.email}
+				<p class="error-message">{$errors.email.at(0)}</p>
+			{/if}
 
+			<div class="input-wrapper" class:error={$errors.password}>
+				<input
+					type="password"
+					name="password"
+					placeholder="Password"
+					bind:value={$form.password}
+					aria-invalid={$errors.password ? "true" : undefined}
+				/>
 				<div class="error-icon">
-					{#if isEmailError}
+					{#if $errors.password}
 						<MaterialSymbolsErrorCircleRounded />
 					{/if}
 				</div>
 			</div>
-			{#if form?.emailError}
-				<p class="error-message">{form.emailError}</p>
+			{#if $errors.password}
+				<p class="error-message">{$errors.password}</p>
 			{/if}
-			<div class="input-wrapper" class:error={isPasswordError}>
-				<input type="password" name="password" placeholder="Password" />
-				<div class="error-icon">
-					{#if isPasswordError}
-						<MaterialSymbolsErrorCircleRounded />
-					{/if}
-				</div>
-			</div>
-			{#if form?.passwordError}
-				<p class="error-message">{form.passwordError}</p>
-			{/if}
+
 			<button>Claim your free trial</button>
+
 			<p class="terms">
 				By clicking the button, you are agreeing to our <a href="/">
 					Terms and Services

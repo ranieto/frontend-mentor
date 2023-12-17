@@ -1,33 +1,29 @@
 import { fail, redirect, type Actions } from "@sveltejs/kit";
+import { superValidate } from "sveltekit-superforms/server";
+import { z } from "zod";
+import type { PageServerLoad } from "./$types";
+
+const schema = z.object({
+	firstName: z.string().min(1, "First name cannot be empty"),
+	lastName: z.string().min(1, "Last name cannot be empty"),
+	email: z
+		.string()
+		.min(1, "Email cannot be empty")
+		.email("Looks like this is not an email"),
+	password: z.string().min(1, "Password cannot be empty"),
+});
+
+export const load = (async () => {
+	const form = await superValidate(schema);
+	return { form };
+}) satisfies PageServerLoad;
 
 export const actions: Actions = {
 	register: async ({ request }) => {
-		const data = await request.formData();
-		const firstName = data.get("first-name") as string;
-		const lastName = data.get("last-name") as string;
-		const email = data.get("email") as string;
-		const password = data.get("password") as string;
+		const form = await superValidate(request, schema);
 
-		const regex = new RegExp(
-			"^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
-		);
-
-		const isValidEmail = regex.test(email);
-
-		if (!firstName || !lastName || !password || !isValidEmail) {
-			return fail(422, {
-				firstNameError: firstName ? undefined : "First Name cannot be empty",
-				lastNameError: lastName ? undefined : "Last Name cannot be empty",
-				emailError: email
-					? isValidEmail
-						? undefined
-						: "Looks like this is not an email"
-					: "Email cannot be emptty",
-				passwordError: password ? undefined : "Password cannot be empty",
-				firstName,
-				lastName,
-				email,
-			});
+		if (!form.valid) {
+			return fail(400, { form });
 		}
 
 		redirect(303, "/");

@@ -1,12 +1,13 @@
 <script lang="ts">
+	import { superForm } from "sveltekit-superforms/client";
 	import ErrorIcon from "~icons/ic/outline-error";
 	import RightArrow from "~icons/material-symbols-light/chevron-right-rounded";
-	import type { ActionData } from "./$types";
 	import heroDesktop from "./hero-desktop.jpg";
 	import heroMobile from "./hero-mobile.jpg";
 	import logo from "./logo.svg";
 
-	export let form: ActionData;
+	export let data;
+	const { form, errors, enhance } = superForm(data.form);
 </script>
 
 <div class="page">
@@ -22,15 +23,15 @@
 			your email below to stay up-to-date with announcements and our launch
 			deals
 		</p>
-		<form action="?/subscribe" method="post">
-			<div class="input-wrapper" class:error={form?.error}>
+		<form action="?/subscribe" method="post" use:enhance>
+			<div class="input-wrapper" class:error={$errors.email}>
 				<input
 					name="email"
 					placeholder="Email Address"
-					value={form?.email || ""}
+					bind:value={$form.email}
 				/>
 				<div class="input-right">
-					{#if form?.error}
+					{#if $errors.email}
 						<div class="error-icon">
 							<ErrorIcon />
 						</div>
@@ -38,8 +39,8 @@
 					<button type="submit"><RightArrow /></button>
 				</div>
 			</div>
-			{#if form?.error}
-				<p class="error-message">{form.error}</p>
+			{#if $errors.email}
+				<p class="error-message">{$errors.email}</p>
 			{/if}
 		</form>
 	</main>

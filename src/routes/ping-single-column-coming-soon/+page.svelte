@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { enhance } from "$app/forms";
+	import { superForm } from "sveltekit-superforms/client";
 	import IonLogoInstagram from "~icons/ion/logo-instagram";
 	import IonLogoTwitter from "~icons/ion/logo-twitter";
 	import IonSocialFacebook from "~icons/ion/social-facebook";
-	import type { ActionData } from "./$types";
 	import dashboardImage from "./illustration-dashboard.png";
 	import logo from "./logo.svg";
 
-	export let form: ActionData;
+	export let data;
+	const { form, message, errors, enhance } = superForm(data.form);
 </script>
 
 <main>
@@ -23,17 +23,18 @@
 		<label for="email">
 			<input
 				type="text"
-				class:form-error={form?.error}
 				name="email"
 				placeholder="Your email address..."
+				class:form-error={$errors.email}
+				bind:value={$form.email}
 			/>
 		</label>
 
 		<div class="form-message">
-			{#if form?.error}
-				<p class="error">{form.error}</p>
-			{:else if form?.success}
-				<p class="success">{form.success}</p>
+			{#if $errors.email}
+				<p class="error">{$errors.email}</p>
+			{:else if $message}
+				<p class="success">{$message}</p>
 			{/if}
 		</div>
 		<button>Notify Me</button>
